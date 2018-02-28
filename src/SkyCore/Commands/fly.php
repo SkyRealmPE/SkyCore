@@ -15,14 +15,12 @@ use pocketmine\event\entity\EntityDamageEvent;
 class Main extends PluginBase implements Listener{
   
   private $fly = [];
-    
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info("Skyrealm's Fly Plugin enabled ");
     }
     public function onCommand(CommandSender $sender, Command $command, string $label, array $args): bool{
         if(strtolower($command->getName()) == "skyfly"){
-            if($sender->hasPermission("skycore.command") || $sender->isOp()){
+            if($sender->hasPermission("skycore.command.fly") || $sender->isOp()){
                 if(isset($this->fly[strtolower($sender->getName())])){
                     unset($this->fly[strtolower($sender->getName())]);
                     $sender->setAllowFlight(false);
