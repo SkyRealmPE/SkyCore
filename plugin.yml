@@ -10,5 +10,5 @@ commands:
 permissions:
   skycore.command.fly:
     description: "Access /skyfly"
-     default: op
+    default: op
  
