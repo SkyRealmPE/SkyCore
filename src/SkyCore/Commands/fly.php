@@ -30,7 +30,7 @@ class Main extends PluginBase implements Listener{
                     $this->fly[strtolower($sender->getName())] = strtolower($sender->getName());
                     $sender->setAllowFlight(true);
                     $sender->setFlying(true);
-                    $sender->sendMessage(TF::GREEN."Fly has been enabled");
+                    $sender->sendMessage(TF::GREEN."You can now swore through the sky!");
                 }
             } else {
                 $sender->sendMessage(TF::RED."Sadly you dont have the permission to use /skyfly " . TF.GREEN . "You can donate at skyrealmpe.ddns.net for access!");
