@@ -12,7 +12,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\event\entity\EntityDamageEvent;
 
 
-class Main extends PluginBase implements Listener{
+class skyfly extends PluginBase{
   
   private $fly = [];
     public function onEnable(){
