@@ -9,6 +9,6 @@ main: SkyCore\Loader\Main
       description: §bSkyRealm's Fly Command :D
   permissions:
     skycore.command.fly
-    description: Access /skyfly
-    default: op
+      description: Access /skyfly
+      default: op
  
