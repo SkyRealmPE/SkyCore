@@ -10,17 +10,18 @@ use pocketmine\utils\TextFormat as color;
 
 use SkyCore\Commands\Fly;
 
-use pocketmine\command\SimpleCommandMap;
+use pocketmine\command;
 
 class Main extends PluginBase {
   
   
   public function onEnabled(){
-    $this-getLogger->info("SkyRealm's Core Plugin has been enabled!"):
+    $this-getLogger->info("SkyRealm's Core Plugin has been enabled! "):
     $this-loadCoreCommands();
   }
   
   public function onDisable(){
+    $this->getLogger->info("SkyCore has been disabled :'( " );
     
     
   }
