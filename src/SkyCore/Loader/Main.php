@@ -8,7 +8,7 @@ use pocketmine\plugin\PluginBase;
 
 use pocketmine\utils\TextFormat as color;
 
-use SkyCore\Commands\fly;
+use SkyCore\Commands\skyfly;
 
 use pocketmine\command;
 
@@ -27,7 +27,7 @@ class Main extends PluginBase {
   }
   
   public function loadCoreCommands(){
-    $this->getServer()->getCommandMap()->register("skyfly", new fly("skyfly", $this));
+    $this->getServer()->getCommandMap()->register("skyfly", new skyfly("skyfly", $this));
     
   }
   
