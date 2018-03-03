@@ -27,7 +27,7 @@ class Main extends PluginBase {
   }
   
   public function loadCoreCommands(){
-    $this->getServer()->getCommandMap()->register("skyfly", new Fly("skyfly", $this));
+    $this->getServer()->getCommandMap()->register("skyfly", new fly("skyfly", $this));
     
   }
   
