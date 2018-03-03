@@ -1,6 +1,6 @@
 <?php
 
-namespace SkyCore\Loader
+namespace SkyCore\Loader;
   
 use pocketmine\Player;
 
@@ -10,12 +10,14 @@ use pocketmine\utils\TextFormat as color;
 
 use SkyCore\Commands\Fly;
 
+use pocketmine\command\SimpleCommandMap;
+
 class Main extends PluginBase {
   
   
   public function onEnabled(){
     $this-getLogger->info("SkyRealm's Core Plugin has been enabled!"):
-    $this-loadCore();
+    $this-loadCoreCommands();
   }
   
   public function onDisable(){
@@ -23,7 +25,7 @@ class Main extends PluginBase {
     
   }
   
-  public function loadCore(){
+  public function loadCoreCommands(){
     $this->getServer()->getCommandMap()->register("skyfly", new Fly("skyfly", $this));
     
   }
