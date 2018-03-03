@@ -1,14 +1,14 @@
 name: SkyCore
-description: §aSkyRealmPE's Core Plugin!
+description: "§aSkyRealmPE's Core Plugin!"
 version: 1.0.0
 author: Crafter2012017
 api: 3.0.0-ALPHA11
 main: SkyCore\Loader\Main
   commands:
     skyfly:
-      description: §bSkyRealm's Fly Command :D
+      description: "§bSkyRealm's Fly Command :D"
   permissions:
-    skycore.command.fly
-      description: Access /skyfly
+    skycore.command.fly:
+      description: "Access /skyfly"
       default: op
  
