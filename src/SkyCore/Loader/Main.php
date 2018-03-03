@@ -16,7 +16,7 @@ class Main extends PluginBase {
   
   
   public function onEnabled(){
-    $this->getLogger->info("SkyRealm's Core Plugin has been enabled! "):
+    $this->getLogger->info("SkyRealm's Core Plugin has been enabled! ");
     $this->loadCoreCommands();
   }
   
