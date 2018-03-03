@@ -8,7 +8,7 @@ use pocketmine\plugin\PluginBase;
 
 use pocketmine\utils\TextFormat as color;
 
-use SkyCore\Commands\Fly;
+use SkyCore\Commands\fly;
 
 use pocketmine\command;
 
