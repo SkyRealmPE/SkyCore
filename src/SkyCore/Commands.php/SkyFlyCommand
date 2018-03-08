@@ -12,9 +12,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\event\entity\EntityDamageEvent;
 
 
-class skyfly extends PluginBase{
-  
-  private $fly = [];
+class SkyFlyCommand extends PluginBase{
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
@@ -33,7 +31,7 @@ class skyfly extends PluginBase{
                     $sender->sendMessage(TF::GREEN."You can now swore through the sky!");
                 }
             } else {
-                $sender->sendMessage(TF::RED."Sadly you dont have the permission to use /skyfly " . TF.GREEN . "You can donate at skyrealmpe.ddns.net for access!");
+                $sender->sendMessage(TF::RED."Sadly you dont have the permission to use /skyfly " . TF.GREEN . " You can donate at skyrealmpe.ddns.net for access!");
             }
         }
         return true;
@@ -42,7 +40,7 @@ class skyfly extends PluginBase{
         
         if(($p = $ev->getEntity()) instanceof Player){
             
-            if($ev->getCause() !== 4 && isset($this->fly[$p->getLowerCaseName()])){
+            if($ev->getCause() !== && isset($this->fly[$p->getLowerCaseName()])){
                 $p->sendPopup(TF::RED . 'Fly has been disabled');
                 $p->setFlying(true);
                 $p->setAllowFlight(false);
