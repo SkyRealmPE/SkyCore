@@ -1,12 +1,12 @@
-name: SkyRealmCore Plugin
+name: SkyRealmCore
 description: "§aSkyRealmPE's Core Plugin!"
-version: 1.0.0
+version: 1.0.0-1
 author: Crafter2012017
 api: 3.0.0-ALPHA11
 main: SkyCore\Loader\Main
 commands:
   feed:
-    description: "§bSkyRealm's feed Command :D"
+    description: "§bSkyRealm's feed Command "
 permissions:
   skycore.command.feed:
     description: "Access /feed"
