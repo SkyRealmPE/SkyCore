@@ -27,7 +27,7 @@ class Feed extends BaseCommand {
     if (!sender->hasPermission("skycore.command.feed"))  {
         
         $sender->sendMessage("Seriously? You know you cant use this command without having a donor rank: donate at skyrealmpe.buycraft.net");
-    
+        return true;
     
     }
     
@@ -44,7 +44,7 @@ class Feed extends BaseCommand {
       
       $sender->sendMessage("You didnt include a player when you use /feed");
       
-      $return true;
+      return true;
     
     
     
@@ -56,12 +56,14 @@ class Feed extends BaseCommand {
     $player->setFood(20);
     $player->sendMessage("Successfully Fed");
     
-    return true
+    return true;
     
     }
     
     
     if ($player !== $sender) {
+        $player->setFood(20);
+        $player->sendMessage("Fed :D");
       
       $sender->sendMessage("Successfully Fed");
     
