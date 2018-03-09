@@ -4,7 +4,7 @@ namespace SkyCore\Commands;
 
 use SkyCore\Loader\Main;
 
-class CommanderManager{
+class CommandManager{
     
  private $plugin;
     
