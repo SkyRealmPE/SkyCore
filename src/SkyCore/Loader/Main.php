@@ -24,7 +24,7 @@ class Main extends PluginBase {
   }
   
   public function RegisterManager() :  CommandManager{
-    $coremanager = CommanderManager($this);
+    $coremanager = CommandManager($this);
     return $coremanager;
   }
   
