@@ -5,7 +5,7 @@ namespace SkyCore\Loader;
 
 use pocketmine\plugin\PluginBase;
 
-use SkyCore\Commands\CommandManger;
+use SkyCore\Commands\CommandManager;
 
 use pocketmine\command;
 
