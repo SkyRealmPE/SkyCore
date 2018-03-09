@@ -2,11 +2,8 @@
 
 namespace SkyCore\Loader;
   
-use pocketmine\Player;
 
 use pocketmine\plugin\PluginBase;
-
-use pocketmine\utils\TextFormat as color;
 
 use SkyCore\Commands\SkyFlyCommand;
 
@@ -17,18 +14,18 @@ class Main extends PluginBase {
   
   public function onEnabled(){
     $this->getLogger->info("SkyRealm's Core Plugin has been enabled! ");
-    $this->loadCoreCommands();
+    $this->RegisterManager();
   }
   
   public function onDisable(){
-    $this->getLogger->info("SkyCore has been disabled :'( " );
+    $this->getLogger->info("SkyCore has been disabled " );
     
     
   }
   
-  public function loadCoreCommands(){
-    $this->getServer()->getCommandMap()->register("skyfly", new SkyFlyCommand("skyfly", $this));
-    
+  public function RegisterManager() :  CommandManager{
+    $coremanager = CommanderManager($this);
+    return $coremanager;
   }
   
   
