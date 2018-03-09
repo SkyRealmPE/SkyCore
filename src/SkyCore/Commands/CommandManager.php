@@ -16,7 +16,7 @@ class CommandManager{
     
     public function init() : void {
         $cmds = [
-            new Feed($this->plugin) ];
+            new Feed($this->plugin)];
         $this->plugin->getServer()->getCommandMap()->registerAll("SkyCore", $cmds);
             
         
