@@ -6,7 +6,7 @@ namespace SkyCore\Commands;
 
 use SkyCore\Loader\Main;
 
-use pocketmine\command\CommanderSender;
+use pocketmine\command\CommandSender;
 
 use pocketmine\Player;
 
@@ -18,11 +18,11 @@ class Feed extends BaseCommand {
     public function __construct(Main $plugin) {
     
     $this->plugin = $plugin;
-    parent::__construct($plugin, "feed", "Access SkyRealm's /feed command", "/feed <user>", ["feed", "food"]);
+    parent::__construct($plugin, "feed", "Access SkyRealm's /feed command", "/feed <player>", ["feed"]);
     
     }
     
-    public function execute(CommanderSender $sender, string $commandLabel, array $args) {
+    public function execute(CommandSender $sender, string $commandLabel, array $args) {
     
     if (!sender->hasPermission("skycore.command.feed"))  {
         
@@ -39,23 +39,16 @@ class Feed extends BaseCommand {
     }
     
     $player = $sender;
-    
     if(isset($args[0]) && !($player = $this->getPlugin()->getServer()->getPlayer($args[0]))) {
-      
       $sender->sendMessage("You didnt include a player when you use /feed");
-      
       return true;
     
     
     
     }
     
-  if ($player->getName() !== $sender->getName() && !sender->hasPermission("skycore.command.feed.other"){
+  if ($player->getName() !== $sender->getName() && !sender->hasPermission("skycore.command.feed.other")){
   $sender->sendMessage("You have no permission to feed another"):
-    
-    $player->setFood(20);
-    $player->sendMessage("Successfully Fed");
-    
     return true;
     
     }
