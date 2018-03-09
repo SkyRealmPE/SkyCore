@@ -5,7 +5,7 @@ namespace SkyCore\Loader;
 
 use pocketmine\plugin\PluginBase;
 
-use SkyCore\Commands\SkyFlyCommand;
+use SkyCore\Commands\CommandManger;
 
 use pocketmine\command;
 
