@@ -22,13 +22,18 @@ class Main extends PluginBase {
     
     
   }
-  
-  public function RegisterManager() :  CommandManager{
-    $coremanager = CommandManager($this);
-    return $coremanager;
-  }
-  
-  
-  
+  	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+       $command = strtolower($command->getName());
+        $count = count($args);
+        switch($cmd){
+            case "voteforranks":
+            $sender->sendMessage("--->§bSkyRealm Network Ranks§r<---");
+            $sender->sendMessage("§bYou are able to vote for numerous ranks in our network :)");
+            $sender->sendMessage("§bGuest Rank : §erequires 10votes");
+            $sender->sendMessage("§bVoter Rank: §erequires 15votes");
+            return true;
+            break;
+            
+             
+    
 }
-  
