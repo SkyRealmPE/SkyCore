@@ -7,6 +7,8 @@ use pocketmine\command\CommandSender;
 
 use pocketmine\command\Command;
 
+use pocketmine\Player;
+
 class Main extends PBASE{
   
 	public function onEnable(){
@@ -20,16 +22,18 @@ class Main extends PBASE{
             #Fly code goes here
 				$sender->sendMessage("§b§lSkyFly §8>§r§b Fly has been enabled");
 				return true;
-			default:
-				return false;
+		  }
+			
+				
 		
-       }
-     }else{
+       
+     } else {
           $sender->sendMessage("§b§lSkyFly§8 >§r§c You do not have permission to use §b/skyfly §c. Please donate for a premium rank at §dskyrealmpe.buycraft.net §c or become topvoter at §dbit.do/skyrealmpe");
-          }
+          return false;
+	}
    }
     case "skyfeed":
-    if($sender instanceof Player)
+    if($sender instanceof Player){
       if($sender->hasPermission("skycore.command.feed")){
         #feed code goes here
         $sender->sendMessage("§b§lSky§cFeed§8 >§r§b You have been fed");
@@ -42,11 +46,6 @@ class Main extends PBASE{
     
       }
     
-    
-    return true:
-    
-   default:
-    return false:
 	}
 	public function onDisable(){
 		$this->getLogger()->info("SkyRealmPE Core Plugin has been disabled");
