@@ -1,39 +1,41 @@
 <?php
-
 namespace SkyCore\Loader;
-  
 
-use pocketmine\plugin\PluginBase;
+use pocketmine\plugin\PluginBase as PBASE;
 
-use SkyCore\Commands\CommandManager;
+use pocketmine\command\CommandSender;
 
-use pocketmine\command;
+use pocketmine\command\Command;
 
-class Main extends PluginBase {
+class Main extends PBASE{
   
-  
-  public function onEnabled(){
-    $this->getLogger->info("SkyRealm's Core Plugin has been enabled! ");
-    $this->RegisterManager();
-  }
-  
-  public function onDisable(){
-    $this->getLogger->info("SkyCore has been disabled " );
+	public function onEnable(){
+		$this->getLogger()->info("SkyRealm's Core plugin has been enabled :D");
+	}
+	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+		switch($command->getName()){
+			case "skyfly":
+        if(!$sender instanceof Player){
+          if($sender->hasPermission("skycore.command.fly")){
+            #Fly code goes here
+				$sender->sendMessage("§b§lSkyFly §8>§r§b Fly has been enabled");
+				return true;
+			default:
+				return false;
+		
+       }
+     }else{
+          $sender->sendMessage("§b§lSkyFly§8 >§r§c You do not have permission to use §b/skyfly §c. Please donate for a premium rank at §dskyrealmpe.buycraft.net §c or become topvoter at §dbit.do/skyrealmpe");
+          }
+   }
+    case "skyfeed":
     
+    return true:
     
-  }
-  	public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
-       $command = strtolower($command->getName());
-        $count = count($args);
-        switch($cmd){
-            case "voteforranks":
-            $sender->sendMessage("--->§bSkyRealm Network Ranks§r<---");
-            $sender->sendMessage("§bYou are able to vote for numerous ranks in our network :)");
-            $sender->sendMessage("§bGuest Rank : §erequires 10votes");
-            $sender->sendMessage("§bVoter Rank: §erequires 15votes");
-            return true;
-            break;
-            
-             
-    
+   default:
+    return false:
+	}
+	public function onDisable(){
+		$this->getLogger()->info("Bye");
+	}
 }
